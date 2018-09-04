@@ -16,6 +16,12 @@ namespace Snake2
             Point p2 = new Point(4, 5, '#');
             p2.Draw();
 
+            HorizontalLine hLine = new HorizontalLine(5, 15, 8, '%');
+            hLine.Drow();
+
+            VerticalLine vLine = new VerticalLine(5, 15, 8, '%');
+            vLine.Drow();
+
             Console.ReadKey();
         }
 
