@@ -22,21 +22,20 @@ namespace Snake2
             VerticalLine rightLine = new VerticalLine(0, 24, 78, '%');
             rightLine.Drow();
 
-            Point p2 = new Point(4, 5, '*');
-            Snake snake = new Snake(p2, 4, Direction.Right);
+            Point p = new Point(4, 5, '*');
+            Snake snake = new Snake(p, 4, Direction.Right);
             snake.Drow();
 
-            snake.Move();
-            Thread.Sleep(300);
-            snake.Move();
-            Thread.Sleep(300);
-            snake.Move();
-            Thread.Sleep(300);
-            snake.Move();
-            Thread.Sleep(300);
-            snake.Move();
-            Thread.Sleep(300);
-
+            while (true)
+            {
+                if (Console.KeyAvailable)
+                {
+                    ConsoleKeyInfo key = Console.ReadKey();
+                    snake.HandleKey(key.Key);
+                }
+                snake.Move();
+                Thread.Sleep(150);
+            }
             Console.ReadKey();
         }
 
